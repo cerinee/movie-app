@@ -21,7 +21,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   padding: 40px 20px;
-  background: linear-gradient(45deg, #e38b8b, #a000b9);
+  background: linear-gradient(135deg, #6d5dfc 0%, #4adede 100%);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
   position: relative;
@@ -35,7 +35,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-opacity="0.1" d="M0,0 L100,0 L100,100 Z"/></svg>');
   background-size: 50px;
 }
 
@@ -70,6 +69,19 @@ body {
   margin-bottom: 20px;
   color: white;
   text-align: center;
+}
+.view-details-button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  letter-spacing: 1px;
 }
 
 .filter-inputs {
@@ -200,34 +212,22 @@ body {
 }
 
 .movies-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
-  justify-content: center;
+  padding: 20px;
 }
 
 .movie-card {
-  width: 100%;
-  max-width: 340px;
   background: linear-gradient(145deg, #2d4059, #222831);
   border-radius: 20px;
+  overflow: hidden;
   transition: all 0.4s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   border: 2px solid transparent;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  animation: float 3s ease-in-out infinite;
 }
-
-.movie-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
 
 @keyframes float {
   0%, 100% {
@@ -244,7 +244,12 @@ body {
   border-color: #ffd93d;
 }
 
-
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
 .movie-card:hover img {
   transform: scale(1.1);
@@ -284,7 +289,7 @@ body {
   text-align: center;
   padding: 30px;
   margin-top: 50px;
-  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(135deg, #6d5dfc 0%, #4adede 100%);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -297,6 +302,11 @@ body {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+  
   .filter-inputs {
     flex-direction: column;
   }
@@ -308,3 +318,4 @@ body {
   .app-main {
     padding: 20px;
   }
+}

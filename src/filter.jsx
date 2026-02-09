@@ -3,7 +3,7 @@ import React from 'react';
 const Filter = ({ titleFilter, ratingFilter, onTitleChange, onRatingChange }) => {
     return (
         <div className="filter">
-            <h2>Filter Movies</h2>
+            <h3>Filter Movies</h3>
             <div className="filter-inputs">
                 <input
                     type="text"
